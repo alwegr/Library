@@ -1,0 +1,54 @@
+﻿@page
+@model Library.Pages.AuthorPages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Подробная информация</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Author.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.IsDeleted)
+        </dd>*@
+        <dt class="col-sm-2">
+            Фамилия
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            Имя
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            Отчество
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.Middle)
+        </dd>
+        <dt class="col-sm-2">
+            Дата рождения
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.DateOfBirthAsString)
+        </dd>
+        <dt class="col-sm-2">
+           Дата смерти
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Author.DateOfDeathAsString)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="text-decoration-none btn btn-outline-success" asp-route-id="@Model.Author?.Id">Изменить</a> 
+    <a asp-page="./Index" class="text-decoration-none btn btn-outline-dark">Назад</a>
+</div>

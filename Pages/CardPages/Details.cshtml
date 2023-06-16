@@ -1,0 +1,49 @@
+﻿@page
+@model Library.Pages.CardPages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Подробная информация</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+           Дата выдачи
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Card.DateStarthAsString)
+        </dd>
+        <dt class="col-sm-2">
+            Дата возврата
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Card.DateEndAsString)
+        </dd>
+        <dt class="col-sm-2">
+            Книга
+        </dt>
+        <dd class="col-sm-10">
+            Автор
+        </dd>
+        <dt class="col-sm-2">
+           Читатель
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Card.Readers.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+           Библиотекарь
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Card.Librarians.FirstName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="text-decoration-none btn btn-outline-success" asp-route-id="@Model.Card?.Id">Изменить</a> 
+    <a asp-page="./Index" class="text-decoration-none btn btn-outline-dark">Назад</a>
+</div>

@@ -1,0 +1,61 @@
+﻿@page
+@model Library.Pages.CardPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Карточка читателя</h1>
+
+<p>
+    <a asp-page="Create" class="text-decoration-none btn btn-outline-dark">Добавить карту</a>
+    <a asp-page="/ReaderPages/Index" class="text-decoration-none btn btn-outline-dark">Назад</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Дата выдачи
+            </th>
+            <th>
+                Дата возврата
+            </th>
+            <th>
+               Книга
+            </th>
+            <th>
+                Читатель
+            </th>
+            <th>
+               Библиотекарь 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Card) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.DateStarthAsString)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.DateEndAsString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Books.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Readers.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Librarians.LastName)
+            </td>
+            <td>
+                    <a asp-page="./Edit" class="text-decoration-none btn btn-outline-success" asp-route-id="@item.Id">Изменить</a> 
+                    <a asp-page="./Details" class="text-decoration-none btn btn-outline-primary" asp-route-id="@item.Id">Подробно</a> 
+                    <a asp-page="./Delete" class="text-decoration-none btn btn-outline-danger" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+﻿@page
+@model Library.Pages.GenrePages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Подробная информация</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre.IsDeleted)
+        </dd>*@
+        <dt class="col-sm-2">
+            Название
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="text-decoration-none btn btn-outline-success" asp-route-id="@Model.Genre?.Id">Изменить</a> 
+    <a asp-page="./Index" class="text-decoration-none btn btn-outline-dark">Назад</a>
+</div>

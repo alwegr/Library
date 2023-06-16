@@ -1,0 +1,66 @@
+﻿@page
+@model Library.Pages.LibrarianPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Библиотекари</h1>
+
+<p>
+    <a asp-page="Create" class="text-decoration-none btn btn-outline-dark">Добавить библиотекаря</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Librarian[0].IsDeleted)
+            </th>*@
+            <th>
+                Фамилия
+            </th>
+            <th>
+               Имя
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Логин
+            </th>
+            <th>
+               Пароль
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Librarian) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Middle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                    <a asp-page="./Edit" class="text-decoration-none btn btn-outline-success" asp-route-id="@item.Id">Изменить</a> 
+                    <a asp-page="./Details" class="text-decoration-none btn btn-outline-primary" asp-route-id="@item.Id">Подробно</a> 
+                    <a asp-page="./Delete" class="text-decoration-none btn btn-outline-danger" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

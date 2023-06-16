@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    @*<h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+
+</div>
+@*@{
+    var imagePath = "";
+    if (Request["photoChoice"] != null)
+    {
+        imagePath = @"images\" + Request["photoChoice"];
+    }
+}*@
+@*<img src="https://www.vremyan.ru/_data/objects/0046/5659/img.465659.perspektiva_1_view05_view16.jpg" class="img-fluid main_photo" alt="...">*@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active bg-dark" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active bg-dark" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner ">
+        <div class="carousel-item active" >
+            <img src="https://images.eksmo.ru/upload/iblock/d61/pic_l_min.jpg" class="d-block w-90 rounded mx-auto d-block" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.eksmo.ru/images/comp_02-min.jpg" class="d-block w-90  rounded mx-auto d-block" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.eksmo.ru/images/comp_01-min.jpg" class="d-block w-90 rounded mx-auto d-block" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark  rounded-pill" aria-hidden="true"></span>
+        <span class="visually-hidden ">Предыдущий</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark  rounded-pill" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+    </button>
+</div>

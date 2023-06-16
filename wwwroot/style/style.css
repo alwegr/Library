@@ -1,0 +1,11 @@
+﻿namespace Library.wwwroot.style
+/*{
+    public class style
+    {
+    }
+}
+*/
+.main_photo{
+    width: 100%;
+    height: 500px;
+}
